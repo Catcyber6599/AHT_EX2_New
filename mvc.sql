@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 28, 2022 lúc 06:26 PM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.12
+-- Thời gian đã tạo: Th3 29, 2022 lúc 03:56 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,10 +42,9 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`id`, `name`, `gender`, `birthday`, `address`, `created_at`, `updated_at`) VALUES
-(1, 'minh', 1, '10/2/2020', '1 duong quang ham', NULL, NULL),
-(2, 'huy', 0, '20/2/2021', '2 tran duy hung', NULL, NULL),
-(16, 'dan', 1, '213', '10 tran duy hung', '2022-03-22 21:21:24', '2022-03-22 22:04:30'),
-(17, 'danbmt', 1, '12/10/2021', '10 tran duy hung3', '2022-03-22 22:06:16', '2022-03-28 01:16:05');
+(1, 'Nguyễn Đức Hiếu', 1, '16/05/1999', 'TT Yên Mỹ - Hưng Yên', '2022-03-28 17:57:27', '2022-03-28 17:57:29'),
+(2, 'Phạm Thị Lan Hương', 0, '22/12/2000', 'Phù Cừ - Hưng yên', '2022-03-28 17:57:14', '2022-03-28 17:57:24'),
+(16, 'Nguyễn Tiến Đạt', 1, '26/06/1999', 'Minh Châu - Yên Mỹ', '2022-03-22 21:21:24', '2022-03-22 22:04:30');
 
 -- --------------------------------------------------------
 
@@ -89,11 +88,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'root', '1212', NULL, NULL);
+(1, 'admin', '123456', NULL, NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `tasks`
@@ -110,6 +115,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `student`
+--
+ALTER TABLE `student`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `tasks`
